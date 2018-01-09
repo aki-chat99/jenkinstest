@@ -11,9 +11,9 @@ pipeline {
         }
         stage('connect to terraform') {
           steps {
-            sh '''cp ankit_565881_ohio.pem /home/ec2-user/demo
+            sh '''sudo cp ankit_565881_ohio.pem /home/ec2-user/demo
 cd /home/ec2-user/demo
-ssh -i ankit_565881_ohio.pem ec2-user@172.16.0.42
+sudo ssh -i ankit_565881_ohio.pem ec2-user@172.16.0.42
 '''
             sleep 10
           }
@@ -23,7 +23,7 @@ ssh -i ankit_565881_ohio.pem ec2-user@172.16.0.42
             echo 'executing infra code'
             sh '''sudo terraform init
 sudo terraform apply
-rm ankit_565881_ohio.pem
+sudo rm ankit_565881_ohio.pem
 exit
 exit
 '''
