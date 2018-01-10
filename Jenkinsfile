@@ -14,9 +14,10 @@ pipeline {
             sh '''cd /var/lib/jenkins/test
 cp -f /var/lib/jenkins/test/pro/variables.tf ./ 
 terraform init
-terraform plan -lock=false
-terraform apply -auto-approve -lock=false
-rm -f /var/lib/jenkins/test/variables.tf'''
+terraform plan 
+terraform apply -auto-approve
+rm -f /var/lib/jenkins/test/variables.tf
+terraform destroy'''
             sleep 10
           }
         }
