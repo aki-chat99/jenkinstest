@@ -13,7 +13,7 @@ pipeline {
           steps {
             sh '''cd /var/lib/jenkins/test
 pwd
-#sudo cp /var/lib/jenkins/test/pro/variables.tf ./
+cp /var/lib/jenkins/test/pro/variables.tf ./
 ls -l'''
             sleep 10
           }
