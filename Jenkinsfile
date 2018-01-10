@@ -14,8 +14,7 @@ pipeline {
             sh '''cd /var/lib/jenkins/test
 pwd
 #sudo cp /var/lib/jenkins/test/pro/variables.tf ./
-ll
-'''
+ls -l'''
             sleep 10
           }
         }
