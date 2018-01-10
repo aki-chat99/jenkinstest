@@ -9,20 +9,19 @@ pipeline {
             sh 'pwd'
           }
         }
-        stage('connect to terraform') {
+        stage('cp required files') {
           steps {
             sh '''cd /var/lib/jenkins/test
-pwd
-cp /var/lib/jenkins/test/pro/variables.tf ./
-ls -l'''
+cp /var/lib/jenkins/test/pro/variables.tf ./ -y '''
             sleep 10
           }
         }
         stage('execute infra code') {
           steps {
             echo 'executing infra code'
-            sh '''pwd
-'''
+            sh '''terraform init
+terraform apply
+rm /var/lib/jenkins/test/variables.tf -y'''
           }
         }
       }
