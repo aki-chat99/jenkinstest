@@ -12,7 +12,7 @@ pipeline {
         stage('cp required files') {
           steps {
             sh '''cd /var/lib/jenkins/test
-cp /var/lib/jenkins/test/pro/variables.tf ./ -y '''
+cp -f /var/lib/jenkins/test/pro/variables.tf ./ '''
             sleep 10
           }
         }
@@ -21,7 +21,7 @@ cp /var/lib/jenkins/test/pro/variables.tf ./ -y '''
             echo 'executing infra code'
             sh '''terraform init
 terraform apply
-rm /var/lib/jenkins/test/variables.tf -y'''
+rm -f /var/lib/jenkins/test/variables.tf'''
           }
         }
       }
