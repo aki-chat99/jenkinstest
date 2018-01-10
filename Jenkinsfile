@@ -17,7 +17,7 @@ terraform init
 terraform plan 
 terraform apply -auto-approve
 rm -f /var/lib/jenkins/test/variables.tf
-terraform destroy -auto-approve'''
+terraform destroy -force'''
             sleep 10
           }
         }
