@@ -12,7 +12,7 @@ pipeline {
         stage('connect to terraform') {
           steps {
             sh '''cd /var/lib/jenkins/test
-cp /var/lib/jenkins/test/pro/variables.tf ./
+sudo cp /var/lib/jenkins/test/pro/variables.tf ./
 ll
 '''
             sleep 10
