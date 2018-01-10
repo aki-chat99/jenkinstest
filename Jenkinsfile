@@ -11,10 +11,10 @@ pipeline {
         }
         stage('connect to terraform') {
           steps {
-            sh '''sudo cd /home/ec2-user/
-sudo cp ankit_565881_ohio.pem /home/ec2-user/demo
-sudo cd /home/ec2-user/demo
-sudo ssh -i ankit_565881_ohio.pem ec2-user@172.16.0.42
+            sh '''cd /home/ec2-user/
+cp ankit_565881_ohio.pem /home/ec2-user/demo
+cd /home/ec2-user/demo
+ssh -i ankit_565881_ohio.pem ec2-user@172.16.0.42
 '''
             sleep 10
           }
