@@ -15,7 +15,7 @@ pipeline {
 cp -f /var/lib/jenkins/test/pro/variables.tf ./ 
 terraform init
 terraform plan
-terraform apply -auto-approve
+terraform apply -auto-approve -lock=false
 rm -f /var/lib/jenkins/test/variables.tf'''
             sleep 10
           }
