@@ -16,7 +16,7 @@ cp -f /var/lib/jenkins/test/pro/variables.tf ./
 terraform init
 terraform plan 
 terraform apply -auto-approve
-terraform destroy -force
+
 rm -f /var/lib/jenkins/test/variables.tf
 '''
             sleep 10
